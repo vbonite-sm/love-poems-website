@@ -1,0 +1,804 @@
+{
+  "poems": [
+    {
+      "id": 1,
+      "title": "Sparkle and Dream",
+      "text": "Your eyes so bright, they sparkle and they gleam,<br>You are the lovely subject of my dream.<br>With you, my world is always fresh and new,<br>My heart belongs completely, dear, to you.",
+      "rhyme_scheme": "AABB",
+      "source": "json_file"
+    },
+    {
+      "id": 2,
+      "title": "Gentle Breeze",
+      "text": "A gentle breeze, a whisper soft and low,<br>Is how your calming presence makes me glow.<br>In every thought, your image I can find,<br>The most amazing person, sweet and kind.",
+      "rhyme_scheme": "AABB",
+      "source": "json_file"
+    },
+    {
+      "id": 3,
+      "title": "Golden Land",
+      "text": "We walk together, hand in loving hand,<br>Across the golden, sunlit, happy land.<br>My love for you will only grow and grow,<br>More than you could ever truly know.",
+      "rhyme_scheme": "AABB",
+      "source": "json_file"
+    },
+    {
+      "id": 4,
+      "title": "Shimmer Like Stars",
+      "text": "Like stars that shimmer in the darkest night,<br>You fill my weary soul with pure delight.<br>Each day with you is such a precious gift,<br>My spirits always get a happy lift.",
+      "rhyme_scheme": "AABB",
+      "source": "json_file"
+    },
+    {
+      "id": 5,
+      "title": "Joyful Sound",
+      "text": "Your laughter rings, a joyful, happy sound,<br>The best I've ever heard on any ground.<br>You make the ordinary moments shine,<br>I'm so incredibly glad that you are mine.",
+      "rhyme_scheme": "AABB",
+      "source": "json_file"
+    },
+    {
+      "id": 6,
+      "title": "Through Changing Seasons",
+      "text": "Through changing seasons, whether sun or rain,<br>My love for you will constantly remain.<br>You are my anchor in the stormy sea,<br>You mean absolutely everything to me.",
+      "rhyme_scheme": "AABB",
+      "source": "json_file"
+    },
+    {
+      "id": 7,
+      "title": "Simple Smile",
+      "text": "A simple smile from you can make my day,<br>And chase the gloomy shadows far away.<br>My heart beats faster when you're standing near,<br>Dispelling every single doubt and fear.",
+      "rhyme_scheme": "AABB",
+      "source": "json_file"
+    },
+    {
+      "id": 8,
+      "title": "Words Unspoken",
+      "text": "You understand the words I cannot speak,<br>The gentle comfort that I often seek.<br>Our bond is special, precious, and so true,<br>I'll spend my lifetime loving only you.",
+      "rhyme_scheme": "AABB",
+      "source": "json_file"
+    },
+    {
+      "id": 9,
+      "title": "River to the Sea",
+      "text": "Like a river flowing to the endless sea,<br>My path in life leads directly to thee.<br>With every dawn, my feelings just expand,<br>The greatest love in all the entire land.",
+      "rhyme_scheme": "AABB",
+      "source": "json_file"
+    },
+    {
+      "id": 10,
+      "title": "Grace and Beauty",
+      "text": "Your grace and beauty captivate my sight,<br>You make my world feel wonderfully bright.<br>A perfect match, a truly lovely pair,<br>A love like ours is wonderfully rare.",
+      "rhyme_scheme": "AABB",
+      "source": "json_file"
+    },
+    {
+      "id": 11,
+      "title": "Feeling So Seen",
+      "text": "The way you look at me, I feel so seen,<br>My heart responds with such a happy beat,<br>You are my love, my life, my cherished queen,<br>Our journey together is so wonderfully sweet.",
+      "rhyme_scheme": "ABAB",
+      "source": "json_file"
+    },
+    {
+      "id": 12,
+      "title": "Fairest Bloom",
+      "text": "In fields of flowers, you're the fairest bloom,<br>Your gentle spirit sets my own heart free,<br>Dispelling any lingering dark gloom,<br>I know that you were always meant for me.",
+      "rhyme_scheme": "ABAB",
+      "source": "json_file"
+    },
+    {
+      "id": 13,
+      "title": "Steady Presence",
+      "text": "When challenges arise and paths seem steep,<br>Your steady presence helps me to endure,<br>The promises to you, I'll always keep,<br>My love for you is steadfast and so pure.",
+      "rhyme_scheme": "ABAB",
+      "source": "json_file"
+    },
+    {
+      "id": 14,
+      "title": "Morning Light",
+      "text": "I think of you when morning light appears,<br>Your kindness shines in all you say and do,<br>You calm my deepest, most unspoken fears,<br>My every happy thought revolves around you.",
+      "rhyme_scheme": "ABAB",
+      "source": "json_file"
+    },
+    {
+      "id": 15,
+      "title": "World Can Change",
+      "text": "The world can change, but one thing stays the same,<br>My admiration for your lovely soul,<br>I whisper softly your beloved name,<br>You make my fractured spirit feel so whole.",
+      "rhyme_scheme": "ABAB",
+      "source": "json_file"
+    },
+    {
+      "id": 16,
+      "title": "Destinies Intertwined",
+      "text": "With every passing moment, I can tell,<br>Our destinies were meant to intertwine,<br>You cast on me a truly magic spell,<br>I'm overjoyed to know that you are mine.",
+      "rhyme_scheme": "ABAB",
+      "source": "json_file"
+    },
+    {
+      "id": 17,
+      "title": "Music on the Breeze",
+      "text": "Like music floating on a summer breeze,<br>Your voice brings comfort, putting me at ease,<br>You offer solace and a sweet release,<br>My love for you will only just increase.",
+      "rhyme_scheme": "ABAB",
+      "source": "json_file"
+    },
+    {
+      "id": 18,
+      "title": "Future in Your Eyes",
+      "text": "I see the future mirrored in your eyes,<br>A tapestry of moments we will share,<br>Beneath the vast and ever-changing skies,<br>A love like ours is truly beyond compare.",
+      "rhyme_scheme": "ABAB",
+      "source": "json_file"
+    },
+    {
+      "id": 19,
+      "title": "Understanding",
+      "text": "Your understanding means the world to me,<br>A haven where my truest self can rest,<br>As boundless as the wide and open sea,<br>Our love will always stand the hardest test.",
+      "rhyme_scheme": "ABAB",
+      "source": "json_file"
+    },
+    {
+      "id": 20,
+      "title": "Heart Begins to Race",
+      "text": "When you are near, my heart begins to race,<br>A feeling that I hope will never end,<br>The beauty of your smile, your gentle face,<br>You are my lover and my dearest friend.",
+      "rhyme_scheme": "ABAB",
+      "source": "json_file"
+    },
+    {
+      "id": 21,
+      "title": "Stars Ignite",
+      "text": "The stars ignite when you are near,<br>My world is brighter, it is true,<br>You banish every doubt and fear,<br>My happiest moments are with you.",
+      "rhyme_scheme": "ABCB",
+      "source": "json_file"
+    },
+    {
+      "id": 22,
+      "title": "Gentle Spirit",
+      "text": "Your gentle spirit, soft and kind,<br>A treasure that I hold so dear,<br>The greatest love I'd ever find,<br>It's wonderful when you are here.",
+      "rhyme_scheme": "ABCB",
+      "source": "json_file"
+    },
+    {
+      "id": 23,
+      "title": "Uncertain Ways",
+      "text": "Through all of life's uncertain ways,<br>Your presence is a calming guide,<br>You brighten up my darkest days,<br>I'm happy with you by my side.",
+      "rhyme_scheme": "ABCB",
+      "source": "json_file"
+    },
+    {
+      "id": 24,
+      "title": "Every Word",
+      "text": "I cherish every word you speak,<br>Your wisdom always sees me through,<br>The comfort that I often seek,<br>My love will always be for you.",
+      "rhyme_scheme": "ABCB",
+      "source": "json_file"
+    },
+    {
+      "id": 25,
+      "title": "Simple Glance",
+      "text": "A simple glance, a tender touch,<br>My heart responds with pure delight,<br>I love you, oh so very much,<br>You make my future feel so bright.",
+      "rhyme_scheme": "ABCB",
+      "source": "json_file"
+    },
+    {
+      "id": 26,
+      "title": "When I Am Lost",
+      "text": "When I am lost, you help me see,<br>The path that I am meant to take,<br>You mean the entire world to me,<br>A bond that nothing e'er can break.",
+      "rhyme_scheme": "ABCB",
+      "source": "json_file"
+    },
+    {
+      "id": 27,
+      "title": "The Way You Laugh",
+      "text": "The way you laugh, a joyful sound,<br>It echoes sweetly in the air,<br>The best companion I have found,<br>A love beyond all compare.",
+      "rhyme_scheme": "ABCB",
+      "source": "json_file"
+    },
+    {
+      "id": 28,
+      "title": "Quiet Moments",
+      "text": "In quiet moments, shared and deep,<br>My feelings for you only grow,<br>The promises to you I'll keep,<br>More than you'll ever really know.",
+      "rhyme_scheme": "ABCB",
+      "source": "json_file"
+    },
+    {
+      "id": 29,
+      "title": "Understanding True",
+      "text": "Your understanding, warm and true,<br>A gift I treasure every day,<br>My heart belongs to only you,<br>Come what may.",
+      "rhyme_scheme": "ABCB",
+      "source": "json_file"
+    },
+    {
+      "id": 30,
+      "title": "Like a Beacon",
+      "text": "Like a beacon in the night,<br>You guide me with your gentle hand,<br>You fill my world with warmth and light,<br>The greatest love in all the land.",
+      "rhyme_scheme": "ABCB",
+      "source": "json_file"
+    },
+    {
+      "id": 31,
+      "title": "Precious and True",
+      "text": "My dearest love, so precious and so true,<br>Everything I am, I give to you,<br>My heart is yours in all I say and do,<br>My love for you is ever fresh and new.",
+      "rhyme_scheme": "AAAA",
+      "source": "json_file"
+    },
+    {
+      "id": 32,
+      "title": "Brightest Flowers",
+      "text": "Your smile can make the brightest flowers bloom,<br>And chase away the darkness and the gloom,<br>You fill with happiness my every room,<br>Avoiding any sense of coming doom.",
+      "rhyme_scheme": "AAAA",
+      "source": "json_file"
+    },
+    {
+      "id": 33,
+      "title": "Sweet Delight",
+      "text": "With you, each day feels like a sweet delight,<br>You make my world incredibly so bright,<br>You are my guiding star, my purest light,<br>Everything about you feels so right.",
+      "rhyme_scheme": "AAAA",
+      "source": "json_file"
+    },
+    {
+      "id": 34,
+      "title": "Morning Until Night",
+      "text": "I think of you from morning until night,<br>You are a truly captivating sight,<br>Holding your hand feels perfectly just right,<br>My love for you takes an amazing flight.",
+      "rhyme_scheme": "AAAA",
+      "source": "json_file"
+    },
+    {
+      "id": 35,
+      "title": "Gift So Dear",
+      "text": "Your kindness is a gift I hold so dear,<br>Whenever you are wonderfully near,<br>I have no single worry, doubt or fear,<br>Your lovely voice is all I want to hear.",
+      "rhyme_scheme": "AAAA",
+      "source": "json_file"
+    },
+    {
+      "id": 36,
+      "title": "Never Fade",
+      "text": "Our special bond will never fade or cease,<br>You bring my troubled, weary spirit peace,<br>My deep affection will forever increase,<br>You are my joy, my ultimate release.",
+      "rhyme_scheme": "AAAA",
+      "source": "json_file"
+    },
+    {
+      "id": 37,
+      "title": "No One Else",
+      "text": "In all the world, there's no one else I see,<br>Who means as very much as you to me,<br>Together, darling, we will always be,<br>Forever bound by love's sweet decree.",
+      "rhyme_scheme": "AAAA",
+      "source": "json_file"
+    },
+    {
+      "id": 38,
+      "title": "Special Way",
+      "text": "You understand me in a special way,<br>And brighten every single passing day,<br>With you, my love, I always want to stay,<br>Come what may, I'll love you anyway.",
+      "rhyme_scheme": "AAAA",
+      "source": "json_file"
+    },
+    {
+      "id": 39,
+      "title": "Plain to See",
+      "text": "My heart is yours, it's plain for all to see,<br>You are my greatest joy, my ecstasy,<br>I'm yours, my love, for all eternity,<br>Just you and I, together, wild and free.",
+      "rhyme_scheme": "AAAA",
+      "source": "json_file"
+    },
+    {
+      "id": 40,
+      "title": "Comfort and Grace",
+      "text": "Your presence is a comfort and a grace,<br>The sweetest smile upon your lovely face,<br>In your embrace, I find my happy place,<br>Our love will win in any time or space.",
+      "rhyme_scheme": "AAAA",
+      "source": "json_file"
+    },
+    {
+      "id": 41,
+      "title": "Music to My Ears",
+      "text": "Your gentle laughter, music to my ears,<br>Effectively dispels all of my fears.<br>With you, my love, my spirit feels so free,<br>As boundless as the wide and rolling sea.",
+      "rhyme_scheme": "AABB",
+      "source": "json_file"
+    },
+    {
+      "id": 42,
+      "title": "Quiet Comfort",
+      "text": "A quiet comfort in your steady gaze,<br>Through passing seasons and the sunlit days.<br>You are the anchor that I hold so tight,<br>My beautiful and ever-shining light.",
+      "rhyme_scheme": "AABB",
+      "source": "json_file"
+    },
+    {
+      "id": 43,
+      "title": "Memory We Make",
+      "text": "Each moment shared, a memory we make,<br>A bond of love that nothing e'er can break.<br>My heart finds solace when you are around,<br>The sweetest joy on earth I've ever found.",
+      "rhyme_scheme": "AABB",
+      "source": "json_file"
+    },
+    {
+      "id": 44,
+      "title": "Morning Dew",
+      "text": "Like morning dew upon a tender rose,<br>Your graceful presence beautifully shows.<br>My admiration for you knows no end,<br>My dearest lover and my trusted friend.",
+      "rhyme_scheme": "AABB",
+      "source": "json_file"
+    },
+    {
+      "id": 45,
+      "title": "Colors Warm and New",
+      "text": "You paint my world with colors warm and new,<br>In every single thing you say and do.<br>My path ahead is brighter by your side,<br>With you as my companion and my guide.",
+      "rhyme_scheme": "AABB",
+      "source": "json_file"
+    },
+    {
+      "id": 46,
+      "title": "Stars Seem Dull",
+      "text": "The stars seem dull when compared to your eyes,<br>My soul takes flight on wings of pure delight,<br>Beneath the vast expanse of moonlit skies,<br>You make my world feel wonderfully so bright.",
+      "rhyme_scheme": "ABAB",
+      "source": "json_file"
+    },
+    {
+      "id": 47,
+      "title": "Summer Air",
+      "text": "A gentle whisper on the summer air,<br>Your loving presence always brings me peace,<br>Beyond all measure, you're a vision rare,<br>My deep affection for you will increase.",
+      "rhyme_scheme": "ABAB",
+      "source": "json_file"
+    },
+    {
+      "id": 48,
+      "title": "Guiding Star",
+      "text": "When I feel lost, you are my guiding star,<br>Your wisdom shines and helps me find my way,<br>No matter if you're near or very far,<br>You brighten every single passing day.",
+      "rhyme_scheme": "ABAB",
+      "source": "json_file"
+    },
+    {
+      "id": 49,
+      "title": "Joy and Grace",
+      "text": "I see a future filled with joy and grace,<br>A tapestry of dreams we'll weave as one,<br>Reflected in your kind and lovely face,<br>Our journey together has just begun.",
+      "rhyme_scheme": "ABAB",
+      "source": "json_file"
+    },
+    {
+      "id": 50,
+      "title": "Precious Thing",
+      "text": "Your understanding is a precious thing,<br>A sanctuary where my heart can rest,<br>The happiness and comfort that you bring,<br>Our love will always stand the hardest test.",
+      "rhyme_scheme": "ABAB",
+      "source": "json_file"
+    },
+    {
+      "id": 51,
+      "title": "World Feels Brighter",
+      "text": "The world feels brighter when you're close to me,<br>A feeling of such wonderful content,<br>You are the only one I want to see,<br>A gift from heaven, truly heaven-sent.",
+      "rhyme_scheme": "ABCB",
+      "source": "json_file"
+    },
+    {
+      "id": 52,
+      "title": "Spirit Shines",
+      "text": "Your spirit shines with such a gentle light,<br>A beacon guiding me through any storm,<br>You make the darkest moments feel so bright,<br>Your love keeps my heart wonderfully warm.",
+      "rhyme_scheme": "ABCB",
+      "source": "json_file"
+    },
+    {
+      "id": 53,
+      "title": "Laughter We Share",
+      "text": "I cherish all the laughter that we share,<br>The little moments, precious and so few,<br>A love like ours is truly beyond compare,<br>My heart will always be faithful to you.",
+      "rhyme_scheme": "ABCB",
+      "source": "json_file"
+    },
+    {
+      "id": 54,
+      "title": "Worries Disappear",
+      "text": "When you are near, my worries disappear,<br>Replaced by a serene and joyful peace,<br>Your loving voice is all I want to hear,<br>My adoration will never decrease.",
+      "rhyme_scheme": "ABCB",
+      "source": "json_file"
+    },
+    {
+      "id": 55,
+      "title": "Calm River",
+      "text": "Like a calm river flowing to the sea,<br>My thoughts of you bring such tranquility,<br>You are the missing piece that completes me,<br>Bound together for eternity.",
+      "rhyme_scheme": "ABCB",
+      "source": "json_file"
+    },
+    {
+      "id": 56,
+      "title": "Constant Flame",
+      "text": "My love for you, a constant, steady flame,<br>I'm so incredibly glad you came,<br>Whispering your sweet and lovely name,<br>Life with you is not a losing game.",
+      "rhyme_scheme": "AAAA",
+      "source": "json_file"
+    },
+    {
+      "id": 57,
+      "title": "Joy I Can't Define",
+      "text": "Your presence brings a joy I can't define,<br>A truly wonderful and lovely sign,<br>I'm so ecstatic that you are all mine,<br>Our two hearts perfectly align.",
+      "rhyme_scheme": "AAAA",
+      "source": "json_file"
+    },
+    {
+      "id": 58,
+      "title": "Better Than the Last",
+      "text": "Each day with you is better than the last,<br>All of my previous worries are now past,<br>Our future together is looking vast,<br>Our anchor of love is holding fast.",
+      "rhyme_scheme": "AAAA",
+      "source": "json_file"
+    },
+    {
+      "id": 59,
+      "title": "Answer to Prayer",
+      "text": "You are the answer to my every prayer,<br>A love so deep, beyond all compare,<br>My heart for you, I willingly will bare,<br>A life of happiness, we both will share.",
+      "rhyme_scheme": "AAAA",
+      "source": "json_file"
+    },
+    {
+      "id": 60,
+      "title": "Soul Feels Lighter",
+      "text": "My soul feels lighter when you are in view,<br>My feelings for you are honest and true,<br>Together, there's nothing we cannot do,<br>My love is forever just for you.",
+      "rhyme_scheme": "AAAA",
+      "source": "json_file"
+    },
+    {
+      "id": 2001,
+      "title": "My Love",
+      "text": "My love for you, a gentle art<br>Forever etched within my heart.<br>Each passing day, a sweeter truth<br>You are my joy, my life, my youth.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2002,
+      "title": "My Love",
+      "text": "In your embrace, I find my peace<br>A love like ours will never cease.<br>With every beat, my heart proclaims<br>Your precious, sweet, enchanting names.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2003,
+      "title": "My Love",
+      "text": "For all you do, my thanks abound<br>The greatest love I've ever found.<br>You fill my days with endless light<br>And make my world so warm and bright.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2004,
+      "title": "My Love",
+      "text": "A whispered word, a gentle touch<br>I love you, darling, oh so much.<br>My guiding star, my constant guide<br>Forever walking by your side. X",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2005,
+      "title": "My Love",
+      "text": "Your smile, a sunbeam, pure and true<br>Reflecting all the love in you.<br>It brightens every cloudy day<br>And chases all my fears away. [X]",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2006,
+      "title": "My Love",
+      "text": "My heart beats strong, a steady drum<br>For you, my love, my only one.<br>With every breath, my passion grows<br>The sweetest story love bestows.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2007,
+      "title": "My Love",
+      "text": "Through every season, come what may<br>My love for you will light the way.<br>A bond so deep, a love so grand<br>Forever holding your dear hand.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2008,
+      "title": "Your Laughter",
+      "text": "For all the laughter, joy, and grace<br>You bring to every time and place.<br>My gratitude, a gentle hum<br>For all the blessings you've become.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2009,
+      "title": "My Love",
+      "text": "Your presence calms my anxious mind<br>A love so pure, so true, so kind.<br>You are my haven, safe and warm<br>Protecting me from every storm.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2010,
+      "title": "My Love",
+      "text": "A thousand stars, a moonlit sky<br>Cannot compare to your sweet eye.<br>My dearest love, my everything<br>The joy and peace your presence bring.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2011,
+      "title": "My Love",
+      "text": "With you, my love, I feel so free<br>A perfect, sweet, reality.<br>You make my world a vibrant hue<br>My dreams come true, because of you.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2012,
+      "title": "My Love",
+      "text": "Each moment shared, a precious gem<br>A love that shines, a diadem.<br>My heart's desire, my soul's delight<br>You make my future pure and bright. [X]",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2013,
+      "title": "My Love",
+      "text": "Your gentle spirit, soft and kind<br>The truest love I'll ever find.<br>My gratitude, a silent prayer<br>For all the moments we can share.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2014,
+      "title": "My Love",
+      "text": "My dearest love, my heart's desire<br>You set my very soul afire.<br>With every beat, my passion grows<br>A tender flame that ever glows.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2015,
+      "title": "Your Laughter",
+      "text": "Your laughter rings, a joyous sound<br>The happiest music to be found.<br>It fills my days with pure delight<br>And makes my future ever bright.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2016,
+      "title": "My Love",
+      "text": "A love like yours, a precious gift<br>It lifts my spirit, make me swift<br>To chase my dreams, and truly be<br>Be someone your love is worthy.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2017,
+      "title": "My Heart",
+      "text": "For all the solace you provide<br>For you, my heart will always ride<br>On waves of joy, a peaceful sea<br>Forever, darling, just you and me.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2018,
+      "title": "My Love",
+      "text": "My heart's a garden, blooming bright<br>Filled with your love, your gentle light.<br>Each tender petal, soft and new<br>Reflecting all my love for you.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2019,
+      "title": "My Love",
+      "text": "Your compassion, deep and vast<br>A love designed to truly last.<br>My grateful heart, forever and always<br>Through all our future, happy days.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2020,
+      "title": "Sunshine",
+      "text": "With every sunrise, pure and new<br>My thoughts, my darling, turn to you.<br>You are the reason, clear and true<br>My world is bright, my skies are blue.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2021,
+      "title": "My Love",
+      "text": "My dearest love, a gentle grace<br>Your smile illuminates my space.<br>With every beat, my heart takes flight<br>You fill my world with pure delight.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2022,
+      "title": "My Love",
+      "text": "In your embrace, I find my peace<br>A love like ours will never cease.<br>Your tender touch, a sweet caress<br>My deepest joy, my happiness.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2023,
+      "title": "A Bond So",
+      "text": "A bond so strong, a spirit true<br>My every dream is found in you.<br>Through whispered words and silent gaze<br>We walk together, through all our days.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2024,
+      "title": "My Love",
+      "text": "Every morning when I wake<br>I think of you and start to smile<br>My love for you will never break<br>You make this life so worthwhile.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2025,
+      "title": "My Love",
+      "text": "Your presence, a comforting embrace<br>A tranquil, sweet, and sacred space.<br>My heart finds rest, my soul finds peace<br>May our true love forever increase.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2026,
+      "title": "My Love",
+      "text": "Your gentle touch, your caring ways<br>Fill my world with endless light<br>I'll love you through all of my days<br>You make everything feel right.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2027,
+      "title": "My Love",
+      "text": "Raindrops fall on window panes<br>While we're wrapped in warm delight<br>Love flows through my beating veins<br>Everything feels perfectly right.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2028,
+      "title": "My Love",
+      "text": "Joy blooms brightly in your glow<br>A love I cherish so<br>Forever, I’ll know<br>My heart’s true flow.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2029,
+      "title": "My Love",
+      "text": "Thank you for your tender heart<br>A love that’s set apart<br>From every start<br>A work of art.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2030,
+      "title": "My Love",
+      "text": "In shadows deep, I found the light<br>Your presence turns the dark to dawn<br>A love that’s steady, bright, and strong<br>That carries me through every night.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2031,
+      "title": "My Love",
+      "text": "Candles flicker in the dark<br>Casting magic all around<br>You ignited love's first spark<br>In you, my soulmate I have found.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2032,
+      "title": "My Heart",
+      "text": "Rose petals scattered on the floor<br>Pale compared to your red lips<br>Each kiss leaves me wanting more<br>My heart completely flips.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2033,
+      "title": "My Love",
+      "text": "Thunder rumbles in the night<br>But in your arms I feel no fear<br>Your love fills me with pure light<br>I'm safe when you are here.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2034,
+      "title": "My Heart",
+      "text": "Diamonds sparkle in the rough<br>Hidden treasures waiting there<br>Your heart is made of precious stuff<br>A gem beyond compare.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2035,
+      "title": "Your Eyes",
+      "text": "Mirrors reflect what stands before<br>Showing truth without disguise<br>In you I see so much more<br>Than meets these loving eyes.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2036,
+      "title": "Your Eyes",
+      "text": "Your eyes are galaxies afar<br>Where dreams and hopes collide and gleam<br>A universe within a dream<br>That guides me like a shining star.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2037,
+      "title": "Your Laughter",
+      "text": "Your laughter rings, a melody<br>The sweetest sound for me to see.<br>My inner child can freely play<br>You brighten every single day.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2038,
+      "title": "My Love",
+      "text": "In your eyes, I see my dawn<br>A love that’s never gone<br>Forever drawn<br>To you alone.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2039,
+      "title": "My Love",
+      "text": "Thank you for your endless care<br>A love so pure and rare<br>In your heart, I share<br>A life so fair.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2040,
+      "title": "In Your Gaze,",
+      "text": "In your gaze, I find my song<br>A melody lifelong<br>Where I belong<br>With you strong.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2041,
+      "title": "My Love",
+      "text": "Each day with you, a brand new start<br>You hold the key to my whole heart.<br>A love so pure, a love so kind<br>The greatest treasure I could find.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2042,
+      "title": "My Love",
+      "text": "A whispered prayer, a silent plea<br>To always have you close to me.<br>My dearest one, my heart's desire<br>My truest love, my soul's entire.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2043,
+      "title": "My Love",
+      "text": "With every breath, my love expands<br>Across all seas, and distant lands.<br>You are my anchor, strong and true<br>My endless love belongs to you.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2044,
+      "title": "My Love",
+      "text": "Your presence heals, your spirit bright<br>You fill my world with purest light.<br>My heart's a haven, safe and sound<br>Where endless love can be found.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2045,
+      "title": "My Heart",
+      "text": "My heart's a flame, a steady glow<br>For you, my darling, watch it grow.<br>With every beat, a loving spark<br>Illuminating every dark.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2046,
+      "title": "My Love",
+      "text": "With you, my darling, side by side<br>Through life's adventures, we will ride.<br>A journey shared, a love so deep<br>The promises our true hearts keep.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2047,
+      "title": "My Love",
+      "text": "For every tear you help me dry<br>And every dream we reach so high.<br>My gratitude, a silent vow<br>To love you, always, then and now.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2048,
+      "title": "My Heart",
+      "text": "In your laughter I find peace<br>A melody that soothes my soul<br>With you my worries always cease<br>You make my broken heart feel whole.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2049,
+      "title": "My Love",
+      "text": "Like stars that dance across the sky<br>Your beauty takes my breath away<br>No words could ever quantify<br>How much I love you every day.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2050,
+      "title": "Moonlit",
+      "text": "Moonbeams dance upon your face<br>Creating shadows soft and sweet<br>In your arms I've found my place<br>Where earth and heaven meet.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2051,
+      "title": "Your Smile",
+      "text": "Golden sunrise paints the dawn<br>As beautiful as your sweet smile<br>All my fears and doubts are gone<br>You make each moment worthwhile.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2052,
+      "title": "Your Eyes",
+      "text": "Crystal dewdrops greet the day<br>Sparkling like your precious eyes<br>Words could never fully say<br>How you light up all my skies.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    },
+    {
+      "id": 2053,
+      "title": "My Heart",
+      "text": "Silver moonlight floods the room<br>Illuminating your sleeping form<br>You chase away all thoughts of gloom<br>My heart you keep so warm.",
+      "source": "main_poems_txt",
+      "rhyme_scheme": "AABB"
+    }
+  ],
+  "metadata": {
+    "total_count": 113,
+    "sources": {
+      "json_file": 60,
+      "main_poems_txt": 53
+    },
+    "duplicates_removed": 0,
+    "last_updated": "2025-06-15"
+  }
+}
