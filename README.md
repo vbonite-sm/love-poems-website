@@ -49,4 +49,4 @@ npm run dev
 
 ---
 
-*Made with ❤️ for someone special*
+_Made with ❤️ for someone special_
