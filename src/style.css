@@ -6,6 +6,8 @@ body {
 
 .poem-text {
     font-family: 'Dancing Script', cursive;
+    white-space: normal;
+    line-height: 1.6;
 }
 
 .heart {

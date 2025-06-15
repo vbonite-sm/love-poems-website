@@ -58,7 +58,7 @@ function displayPoem(poem) {
         poemContainer.innerHTML = `
             <div class="text-center">
                 ${poem.title ? `<h2 class="text-2xl font-bold text-pink-600 mb-4">${poem.title}</h2>` : ''}
-                <p class="poem-text text-xl md:text-2xl text-gray-700 leading-relaxed">${cleanText}</p>
+                <div class="poem-text text-xl md:text-2xl text-gray-700 leading-relaxed">${cleanText}</div>
             </div>
         `;
         
