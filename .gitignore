@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Development files
+*.py
+*.json.bak
+*.md.bak
+temp/
+test/
