@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import '../../config/app_colors.dart';
 import '../../config/app_theme.dart';
 import '../providers/auth_provider.dart';
 import '../providers/poem_providers.dart';
-import '../widgets/gradient_background.dart';
+import '../widgets/solid_background.dart';
 
 class WriteLetterScreen extends ConsumerStatefulWidget {
   const WriteLetterScreen({super.key});
@@ -36,19 +35,22 @@ class _WriteLetterScreenState extends ConsumerState<WriteLetterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GradientBackground(
+      body: SolidBackground(
         child: SafeArea(
           child: Column(
             children: [
               // App bar
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.sm,
+                  vertical: AppSpacing.sm,
+                ),
                 child: Row(
                   children: [
                     IconButton(
                       onPressed: () => Navigator.of(context).pop(),
                       icon: const Icon(Icons.arrow_back_ios),
-                      color: AppColors.deepPassion,
+                      color: AppColors.neutral900,
                     ),
                     Expanded(
                       child: Text(
@@ -57,7 +59,7 @@ class _WriteLetterScreenState extends ConsumerState<WriteLetterScreen> {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    const SizedBox(width: 48), // Balance the back button
+                    const SizedBox(width: AppSpacing.xxl),
                   ],
                 ),
               ),
@@ -65,7 +67,7 @@ class _WriteLetterScreenState extends ConsumerState<WriteLetterScreen> {
               // Content
               Expanded(
                 child: SingleChildScrollView(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(AppSpacing.md),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -74,44 +76,38 @@ class _WriteLetterScreenState extends ConsumerState<WriteLetterScreen> {
                         'Title',
                         style: AppTheme.lightTheme.textTheme.labelLarge,
                       ),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: AppSpacing.sm),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                          boxShadow: [
-                            BoxShadow(
-                              color: AppColors.roseRouge.withValues(alpha: 0.1),
-                              blurRadius: 8,
-                              offset: const Offset(0, 2),
-                            ),
-                          ],
+                          color: AppColors.pureWhite,
+                          borderRadius: BorderRadius.circular(8),
+                          boxShadow: AppElevation.subtle,
                         ),
                         child: TextField(
                           controller: _titleController,
                           decoration: InputDecoration(
                             hintText: 'Give your letter a title...',
                             hintStyle: TextStyle(
-                              color: AppColors.textSecondary.withValues(alpha: 0.5),
+                              color: AppColors.neutral600.withValues(alpha: 0.5),
                             ),
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide.none,
                             ),
-                            contentPadding: const EdgeInsets.all(16),
+                            contentPadding: const EdgeInsets.all(AppSpacing.md),
                           ),
                           style: AppTheme.poemTitle.copyWith(fontSize: 20),
                         ),
-                      ).animate().fadeIn(duration: 400.ms).slideX(begin: -0.1, end: 0),
+                      ),
 
-                      const SizedBox(height: 24),
+                      const SizedBox(height: AppSpacing.lg),
 
                       // Theme selector
                       Text(
                         'Theme',
                         style: AppTheme.lightTheme.textTheme.labelLarge,
                       ),
-                      const SizedBox(height: 12),
+                      const SizedBox(height: AppSpacing.sm),
                       SizedBox(
                         height: 80,
                         child: ListView.builder(
@@ -121,7 +117,7 @@ class _WriteLetterScreenState extends ConsumerState<WriteLetterScreen> {
                             final theme = _themes[index];
                             final isSelected = _selectedTheme == theme['id'];
                             return Padding(
-                              padding: const EdgeInsets.only(right: 12),
+                              padding: const EdgeInsets.only(right: AppSpacing.sm),
                               child: GestureDetector(
                                 onTap: () {
                                   setState(() => _selectedTheme = theme['id']);
@@ -131,25 +127,10 @@ class _WriteLetterScreenState extends ConsumerState<WriteLetterScreen> {
                                   width: 80,
                                   decoration: BoxDecoration(
                                     color: isSelected
-                                        ? AppColors.roseRouge
-                                        : Colors.white,
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: isSelected
-                                          ? AppColors.roseRouge
-                                          : AppColors.softBlush,
-                                      width: 2,
-                                    ),
-                                    boxShadow: isSelected
-                                        ? [
-                                            BoxShadow(
-                                              color: AppColors.roseRouge
-                                                  .withValues(alpha: 0.3),
-                                              blurRadius: 8,
-                                              offset: const Offset(0, 4),
-                                            ),
-                                          ]
-                                        : null,
+                                        ? AppColors.accentRose
+                                        : AppColors.pureWhite,
+                                    borderRadius: BorderRadius.circular(8),
+                                    boxShadow: AppElevation.subtle,
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -158,9 +139,9 @@ class _WriteLetterScreenState extends ConsumerState<WriteLetterScreen> {
                                         theme['icon'],
                                         color: isSelected
                                             ? Colors.white
-                                            : AppColors.deepPassion,
+                                            : AppColors.neutral900,
                                       ),
-                                      const SizedBox(height: 4),
+                                      const SizedBox(height: AppSpacing.xs),
                                       Text(
                                         theme['name'],
                                         style: TextStyle(
@@ -168,38 +149,32 @@ class _WriteLetterScreenState extends ConsumerState<WriteLetterScreen> {
                                           fontWeight: FontWeight.w500,
                                           color: isSelected
                                               ? Colors.white
-                                              : AppColors.textSecondary,
+                                              : AppColors.neutral600,
                                         ),
                                       ),
                                     ],
                                   ),
                                 ),
                               ),
-                            ).animate(delay: (index * 100).ms).fadeIn().slideX(begin: 0.2, end: 0);
+                            );
                           },
                         ),
                       ),
 
-                      const SizedBox(height: 24),
+                      const SizedBox(height: AppSpacing.lg),
 
                       // Body input
                       Text(
                         'Your Letter',
                         style: AppTheme.lightTheme.textTheme.labelLarge,
                       ),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: AppSpacing.sm),
                       Container(
                         height: 250,
                         decoration: BoxDecoration(
-                          color: AppColors.antiqueWhite,
-                          borderRadius: BorderRadius.circular(12),
-                          boxShadow: [
-                            BoxShadow(
-                              color: AppColors.roseRouge.withValues(alpha: 0.1),
-                              blurRadius: 8,
-                              offset: const Offset(0, 2),
-                            ),
-                          ],
+                          color: AppColors.neutral50,
+                          borderRadius: BorderRadius.circular(8),
+                          boxShadow: AppElevation.subtle,
                         ),
                         child: TextField(
                           controller: _bodyController,
@@ -209,19 +184,19 @@ class _WriteLetterScreenState extends ConsumerState<WriteLetterScreen> {
                           decoration: InputDecoration(
                             hintText: 'Pour your heart out...',
                             hintStyle: AppTheme.poemBody.copyWith(
-                              color: AppColors.textSecondary.withValues(alpha: 0.5),
+                              color: AppColors.neutral600.withValues(alpha: 0.5),
                             ),
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide.none,
                             ),
-                            contentPadding: const EdgeInsets.all(16),
+                            contentPadding: const EdgeInsets.all(AppSpacing.md),
                           ),
                           style: AppTheme.poemBody,
                         ),
-                      ).animate().fadeIn(delay: 200.ms, duration: 400.ms).slideY(begin: 0.1, end: 0),
+                      ),
 
-                      const SizedBox(height: 32),
+                      const SizedBox(height: AppSpacing.xl),
                     ],
                   ),
                 ),
@@ -229,7 +204,7 @@ class _WriteLetterScreenState extends ConsumerState<WriteLetterScreen> {
 
               // Send button
               Padding(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(AppSpacing.md),
                 child: SizedBox(
                   width: double.infinity,
                   height: 56,
@@ -238,14 +213,14 @@ class _WriteLetterScreenState extends ConsumerState<WriteLetterScreen> {
                     icon: const Icon(Icons.favorite),
                     label: const Text('Send to My Love'),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.roseRouge,
+                      backgroundColor: AppColors.accentRose,
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(8),
                       ),
                     ),
                   ),
-                ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2, end: 0),
+                ),
               ),
             ],
           ),
@@ -259,7 +234,7 @@ class _WriteLetterScreenState extends ConsumerState<WriteLetterScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: const Text('Please fill in both title and letter'),
-          backgroundColor: AppColors.deepPassion,
+          backgroundColor: AppColors.neutral900,
           behavior: SnackBarBehavior.floating,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
@@ -288,7 +263,7 @@ class _WriteLetterScreenState extends ConsumerState<WriteLetterScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: const Text('Please link with your partner first in Profile'),
-            backgroundColor: AppColors.deepPassion,
+            backgroundColor: AppColors.neutral900,
             behavior: SnackBarBehavior.floating,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
@@ -320,11 +295,11 @@ class _WriteLetterScreenState extends ConsumerState<WriteLetterScreen> {
             content: const Row(
               children: [
                 Icon(Icons.favorite, color: Colors.white),
-                SizedBox(width: 8),
+                SizedBox(width: AppSpacing.sm),
                 Text('Letter sent with love!'),
               ],
             ),
-            backgroundColor: AppColors.roseRouge,
+            backgroundColor: AppColors.accentRose,
             behavior: SnackBarBehavior.floating,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),

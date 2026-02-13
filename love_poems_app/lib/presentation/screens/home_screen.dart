@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import '../../config/app_colors.dart';
 import '../../config/app_theme.dart';
 import '../providers/poem_providers.dart';
-import '../widgets/gradient_background.dart';
-import '../widgets/sealed_envelope.dart';
-import '../widgets/open_envelope.dart';
+import '../widgets/solid_background.dart';
+import '../widgets/minimal_letter_card.dart';
+import '../widgets/empty_state_card.dart';
 import 'poem_view_screen.dart';
 import 'archive_screen.dart';
 import 'write_letter_screen.dart';
 import 'profile_screen.dart';
-import '../widgets/valentine_letter.dart';
+import '../widgets/special_dialog.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -23,115 +22,47 @@ class HomeScreen extends ConsumerStatefulWidget {
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   int _selectedIndex = 0;
 
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GradientBackground(
+      body: SolidBackground(
         child: SafeArea(
           child: IndexedStack(
             index: _selectedIndex,
             children: const [
               _HomeContent(),
               ArchiveScreen(),
+              ProfileScreen(),
             ],
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (context) => const ValentineLetter(),
-          );
-        },
-        backgroundColor: AppColors.roseRouge,
-        elevation: 8,
-        child: Icon(
-          Icons.local_florist,
-          color: Colors.white,
-          size: 32,
-        )
-            .animate(onPlay: (controller) => controller.repeat(reverse: true))
-            .scale(
-              duration: 1500.ms,
-              begin: const Offset(1.0, 1.0),
-              end: const Offset(1.15, 1.15),
-              curve: Curves.easeInOut,
-            ),
-      ).animate().fadeIn(delay: 1000.ms).scale(
-            begin: const Offset(0, 0),
-            end: const Offset(1, 1),
-            curve: Curves.elasticOut,
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.mail_outline),
+            activeIcon: Icon(Icons.mail),
+            label: 'Today',
           ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        notchMargin: 8.0,
-        color: Colors.white,
-        elevation: 8,
-        child: SizedBox(
-          height: 60,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Expanded(
-                child: InkWell(
-                  onTap: () => setState(() => _selectedIndex = 0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        _selectedIndex == 0 ? Icons.mail : Icons.mail_outline,
-                        color: _selectedIndex == 0
-                            ? AppColors.roseRouge
-                            : AppColors.textSecondary,
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        'Today',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: _selectedIndex == 0
-                              ? AppColors.roseRouge
-                              : AppColors.textSecondary,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(width: 80), // Space for FAB
-              Expanded(
-                child: InkWell(
-                  onTap: () => setState(() => _selectedIndex = 1),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        _selectedIndex == 1
-                            ? Icons.folder
-                            : Icons.folder_open_outlined,
-                        color: _selectedIndex == 1
-                            ? AppColors.roseRouge
-                            : AppColors.textSecondary,
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        'Archive',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: _selectedIndex == 1
-                              ? AppColors.roseRouge
-                              : AppColors.textSecondary,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
+          BottomNavigationBarItem(
+            icon: Icon(Icons.folder_outlined),
+            activeIcon: Icon(Icons.folder),
+            label: 'Archive',
           ),
-        ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            activeIcon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
     );
   }
@@ -149,32 +80,32 @@ class _HomeContent extends ConsumerWidget {
         // Main content
         Center(
           child: Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding: const EdgeInsets.all(AppSpacing.lg),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Love Poems',
                   style: AppTheme.lightTheme.textTheme.displayMedium,
-                ).animate().fadeIn(duration: 600.ms).slideY(begin: -0.2, end: 0),
-                const SizedBox(height: 8),
+                ),
+                const SizedBox(height: AppSpacing.sm),
                 Text(
                   'A letter awaits you...',
                   style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
                     color: AppColors.textSecondary,
                     fontStyle: FontStyle.italic,
                   ),
-                ).animate().fadeIn(delay: 200.ms, duration: 600.ms),
-                const SizedBox(height: 48),
+                ),
+                const SizedBox(height: AppSpacing.xxl),
                 _buildContent(context, ref, dailyLetter),
               ],
             ),
           ),
         ),
-        // Write letter button (quill icon)
+        // Write letter button (top-left)
         Positioned(
-          top: 8,
-          left: 8,
+          top: AppSpacing.sm,
+          left: AppSpacing.sm,
           child: IconButton(
             onPressed: () {
               Navigator.of(context).push(
@@ -184,26 +115,25 @@ class _HomeContent extends ConsumerWidget {
               );
             },
             icon: const Icon(Icons.edit_note),
-            color: AppColors.deepPassion,
+            color: AppColors.neutral800,
             tooltip: 'Write a letter',
-          ).animate().fadeIn(delay: 600.ms),
+          ),
         ),
-        // Profile button
+        // Special message button (top-right)
         Positioned(
-          top: 8,
-          right: 8,
+          top: AppSpacing.sm,
+          right: AppSpacing.sm,
           child: IconButton(
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const ProfileScreen(),
-                ),
+              showDialog(
+                context: context,
+                builder: (context) => const SpecialDialog(),
               );
             },
-            icon: const Icon(Icons.person_outline),
-            color: AppColors.deepPassion,
-            tooltip: 'Profile',
-          ).animate().fadeIn(delay: 600.ms),
+            icon: const Icon(Icons.favorite_outline),
+            color: AppColors.accentRose,
+            tooltip: 'Special message',
+          ),
         ),
       ],
     );
@@ -214,13 +144,14 @@ class _HomeContent extends ConsumerWidget {
     switch (dailyLetter.state) {
       case DailyLetterState.loading:
         return const CircularProgressIndicator(
-          color: AppColors.roseRouge,
+          color: AppColors.accentRose,
+          strokeWidth: 2,
         );
 
       case DailyLetterState.sealed:
         return Column(
           children: [
-            SealedEnvelope(
+            MinimalLetterCard(
               onTap: () async {
                 await ref.read(dailyLetterProvider.notifier).openEnvelope();
                 if (context.mounted) {
@@ -236,26 +167,12 @@ class _HomeContent extends ConsumerWidget {
                   }
                 }
               },
-            ).animate().fadeIn(delay: 400.ms, duration: 800.ms).scale(
-                  begin: const Offset(0.8, 0.8),
-                  end: const Offset(1, 1),
-                  curve: Curves.easeOutBack,
-                ),
-            const SizedBox(height: 24),
-            Text(
-              'Tap to open',
-              style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                color: AppColors.textSecondary,
-              ),
-            ).animate(onPlay: (c) => c.repeat(reverse: true)).fadeIn().then().fadeOut(),
+            ),
           ],
         );
 
       case DailyLetterState.waitUntilTomorrow:
-        return const OpenEnvelope()
-            .animate()
-            .fadeIn(duration: 600.ms)
-            .scale(begin: const Offset(0.9, 0.9), end: const Offset(1, 1));
+        return const EmptyStateCard();
 
       case DailyLetterState.opened:
         if (dailyLetter.currentPoem != null) {
@@ -273,15 +190,16 @@ class _HomeContent extends ConsumerWidget {
                 icon: const Icon(Icons.mail_outline),
                 label: const Text('Read Today\'s Poem'),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: AppSpacing.md),
               Text(
                 dailyLetter.currentPoem!.title,
                 style: AppTheme.poemTitle.copyWith(fontSize: 20),
+                textAlign: TextAlign.center,
               ),
             ],
           );
         }
-        return const OpenEnvelope();
+        return const EmptyStateCard();
 
       case DailyLetterState.error:
         return Column(
@@ -289,15 +207,15 @@ class _HomeContent extends ConsumerWidget {
             Icon(
               Icons.error_outline,
               size: 48,
-              color: AppColors.deepPassion.withValues(alpha: 0.5),
+              color: AppColors.neutral400,
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: AppSpacing.md),
             Text(
               dailyLetter.errorMessage ?? 'Something went wrong',
               style: AppTheme.lightTheme.textTheme.bodyMedium,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: AppSpacing.md),
             ElevatedButton(
               onPressed: () => ref.read(dailyLetterProvider.notifier).reset(),
               child: const Text('Try Again'),

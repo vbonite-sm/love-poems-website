@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import '../../config/app_colors.dart';
 import '../../config/app_theme.dart';
 import '../providers/auth_provider.dart';
-import '../widgets/gradient_background.dart';
+import '../widgets/solid_background.dart';
 import 'sign_in_screen.dart';
 
 class ProfileScreen extends ConsumerStatefulWidget {
@@ -109,7 +108,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
         ],
       ),
       extendBodyBehindAppBar: true,
-      body: GradientBackground(
+      body: SolidBackground(
         child: SafeArea(
           child: profileAsync.when(
             data: (profile) => _buildProfileContent(profile, user.email ?? ''),
@@ -129,207 +128,207 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     final partnerId = profile?['partner_id'] as String?;
 
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(24.0),
+      padding: const EdgeInsets.all(AppSpacing.lg),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const SizedBox(height: 24),
+          const SizedBox(height: AppSpacing.lg),
 
           // Profile header
-          Icon(
+          const Icon(
             Icons.person,
             size: 80,
-            color: AppColors.roseRouge,
-          ).animate().fadeIn(duration: 600.ms).scale(delay: 200.ms),
+            color: AppColors.accentRose,
+          ),
 
-          const SizedBox(height: 16),
+          const SizedBox(height: AppSpacing.md),
 
           Text(
             displayName,
             textAlign: TextAlign.center,
             style: AppTheme.lightTheme.textTheme.displayMedium,
-          ).animate().fadeIn(delay: 300.ms),
+          ),
 
           Text(
             email,
             textAlign: TextAlign.center,
             style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-              color: AppColors.textSecondary,
+              color: AppColors.neutral600,
             ),
-          ).animate().fadeIn(delay: 400.ms),
+          ),
 
-          const SizedBox(height: 48),
+          const SizedBox(height: AppSpacing.xxl),
 
           // Your partner code card
-          Card(
-            elevation: 4,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
+          Container(
+            decoration: BoxDecoration(
+              color: AppColors.pureWhite,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: AppElevation.medium,
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(24.0),
+            padding: const EdgeInsets.all(AppSpacing.lg),
+            child: Column(
+              children: [
+                Text(
+                  'Your Partner Code',
+                  style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+                    color: AppColors.neutral900,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.md),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.lg,
+                    vertical: AppSpacing.md,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.neutral100,
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(
+                      color: AppColors.neutral200,
+                      width: 1,
+                    ),
+                  ),
+                  child: Text(
+                    partnerCode,
+                    style: AppTheme.lightTheme.textTheme.headlineMedium?.copyWith(
+                      color: AppColors.neutral900,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 4,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.md),
+                OutlinedButton.icon(
+                  onPressed: () {
+                    Clipboard.setData(ClipboardData(text: partnerCode));
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Code copied to clipboard!'),
+                        duration: Duration(seconds: 2),
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.copy),
+                  label: const Text('Copy Code'),
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: AppColors.neutral900,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.sm),
+                Text(
+                  'Share this code with your partner',
+                  style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                    color: AppColors.neutral600,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          const SizedBox(height: AppSpacing.lg),
+
+          // Partner status or link partner card
+          if (partnerId != null)
+            Container(
+              decoration: BoxDecoration(
+                color: AppColors.pureWhite,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: AppColors.successGreen,
+                  width: 2,
+                ),
+                boxShadow: AppElevation.medium,
+              ),
+              padding: const EdgeInsets.all(AppSpacing.lg),
               child: Column(
                 children: [
+                  const Icon(
+                    Icons.favorite,
+                    size: 48,
+                    color: AppColors.successGreen,
+                  ),
+                  const SizedBox(height: AppSpacing.md),
                   Text(
-                    'Your Partner Code',
+                    'Partner Linked!',
                     style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
-                      color: AppColors.deepPassion,
+                      color: AppColors.successGreen,
                     ),
                   ),
-                  const SizedBox(height: 16),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 16,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.softBlush,
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: AppColors.roseRouge,
-                        width: 2,
-                      ),
-                    ),
-                    child: Text(
-                      partnerCode,
-                      style: AppTheme.lightTheme.textTheme.headlineMedium?.copyWith(
-                        color: AppColors.deepPassion,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 4,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  OutlinedButton.icon(
-                    onPressed: () {
-                      Clipboard.setData(ClipboardData(text: partnerCode));
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Code copied to clipboard!'),
-                          duration: Duration(seconds: 2),
-                        ),
-                      );
-                    },
-                    icon: const Icon(Icons.copy),
-                    label: const Text('Copy Code'),
-                    style: OutlinedButton.styleFrom(
-                      foregroundColor: AppColors.deepPassion,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: AppSpacing.sm),
                   Text(
-                    'Share this code with your partner',
-                    style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                      color: AppColors.textSecondary,
-                      fontStyle: FontStyle.italic,
+                    'You can now send and receive custom love letters',
+                    textAlign: TextAlign.center,
+                    style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                      color: AppColors.neutral600,
                     ),
                   ),
                 ],
               ),
-            ),
-          ).animate().fadeIn(delay: 500.ms).slideY(begin: 0.2, end: 0),
-
-          const SizedBox(height: 24),
-
-          // Partner status or link partner card
-          if (partnerId != null)
-            Card(
-              elevation: 4,
-              color: Colors.green.shade50,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(24.0),
-                child: Column(
-                  children: [
-                    Icon(
-                      Icons.favorite,
-                      size: 48,
-                      color: Colors.green.shade600,
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      'Partner Linked!',
-                      style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
-                        color: Colors.green.shade800,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      'You can now send and receive custom love letters',
-                      textAlign: TextAlign.center,
-                      style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                        color: Colors.green.shade700,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ).animate().fadeIn(delay: 600.ms).scale()
+            )
           else
-            Card(
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
+            Container(
+              decoration: BoxDecoration(
+                color: AppColors.pureWhite,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: AppElevation.medium,
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(24.0),
-                child: Column(
-                  children: [
-                    Text(
-                      'Link with Your Partner',
-                      style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
-                        color: AppColors.deepPassion,
+              padding: const EdgeInsets.all(AppSpacing.lg),
+              child: Column(
+                children: [
+                  Text(
+                    'Link with Your Partner',
+                    style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+                      color: AppColors.neutral900,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  Text(
+                    'Enter your partner\'s code to start sending custom letters',
+                    textAlign: TextAlign.center,
+                    style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                      color: AppColors.neutral600,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                  TextField(
+                    controller: _partnerCodeController,
+                    decoration: InputDecoration(
+                      labelText: 'Partner Code',
+                      hintText: 'ABCD12',
+                      prefixIcon: const Icon(Icons.link),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      errorText: _linkError,
+                    ),
+                    textCapitalization: TextCapitalization.characters,
+                    maxLength: 6,
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  ElevatedButton(
+                    onPressed: _isLinking ? null : _linkPartner,
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AppSpacing.xl,
+                        vertical: AppSpacing.md,
                       ),
                     ),
-                    const SizedBox(height: 16),
-                    Text(
-                      'Enter your partner\'s code to start sending custom letters',
-                      textAlign: TextAlign.center,
-                      style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                        color: AppColors.textSecondary,
-                      ),
-                    ),
-                    const SizedBox(height: 24),
-                    TextField(
-                      controller: _partnerCodeController,
-                      decoration: InputDecoration(
-                        labelText: 'Partner Code',
-                        hintText: 'ABCD12',
-                        prefixIcon: const Icon(Icons.link),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        errorText: _linkError,
-                      ),
-                      textCapitalization: TextCapitalization.characters,
-                      maxLength: 6,
-                    ),
-                    const SizedBox(height: 16),
-                    ElevatedButton(
-                      onPressed: _isLinking ? null : _linkPartner,
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 32,
-                          vertical: 16,
-                        ),
-                      ),
-                      child: _isLinking
-                          ? const SizedBox(
-                              height: 20,
-                              width: 20,
-                              child: CircularProgressIndicator(
-                                strokeWidth: 2,
-                                color: Colors.white,
-                              ),
-                            )
-                          : const Text('Link Partner'),
-                    ),
-                  ],
-                ),
+                    child: _isLinking
+                        ? const SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: Colors.white,
+                            ),
+                          )
+                        : const Text('Link Partner'),
+                  ),
+                ],
               ),
-            ).animate().fadeIn(delay: 600.ms).slideY(begin: 0.2, end: 0),
+            ),
         ],
       ),
     );

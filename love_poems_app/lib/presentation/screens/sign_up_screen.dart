@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import '../../config/app_colors.dart';
 import '../../config/app_theme.dart';
 import '../providers/auth_provider.dart';
-import '../widgets/gradient_background.dart';
+import '../widgets/solid_background.dart';
 import 'home_screen.dart';
 
 class SignUpScreen extends ConsumerStatefulWidget {
@@ -52,7 +51,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(authState.error!),
-            backgroundColor: Colors.red,
+            backgroundColor: AppColors.errorRed,
           ),
         );
       }
@@ -73,11 +72,11 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
         ),
       ),
       extendBodyBehindAppBar: true,
-      body: GradientBackground(
+      body: SolidBackground(
         child: SafeArea(
           child: Center(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.all(24.0),
+              padding: const EdgeInsets.all(AppSpacing.lg),
               child: Form(
                 key: _formKey,
                 child: Column(
@@ -86,23 +85,20 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                   children: [
                     // Heart icon
                     Icon(
-                      Icons.favorite,
+                      Icons.favorite_outline,
                       size: 64,
-                      color: AppColors.roseRouge,
-                    )
-                        .animate()
-                        .fadeIn(duration: 600.ms)
-                        .scale(delay: 200.ms, duration: 400.ms),
-                    const SizedBox(height: 16),
+                      color: AppColors.accentRose,
+                    ),
+                    const SizedBox(height: AppSpacing.md),
 
                     // Title
                     Text(
                       'Create Account',
                       textAlign: TextAlign.center,
                       style: AppTheme.lightTheme.textTheme.displayMedium,
-                    ).animate().fadeIn(delay: 300.ms, duration: 600.ms),
+                    ),
 
-                    const SizedBox(height: 8),
+                    const SizedBox(height: AppSpacing.sm),
 
                     Text(
                       'Join to receive daily love letters',
@@ -111,21 +107,16 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                         color: AppColors.textSecondary,
                         fontStyle: FontStyle.italic,
                       ),
-                    ).animate().fadeIn(delay: 400.ms, duration: 600.ms),
+                    ),
 
-                    const SizedBox(height: 48),
+                    const SizedBox(height: AppSpacing.xxl),
 
                     // Display name field
                     TextFormField(
                       controller: _displayNameController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Display Name',
-                        prefixIcon: const Icon(Icons.person_outline),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        filled: true,
-                        fillColor: Colors.white.withOpacity(0.9),
+                        prefixIcon: Icon(Icons.person_outline),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -133,22 +124,17 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                         }
                         return null;
                       },
-                    ).animate().fadeIn(delay: 500.ms).slideX(begin: -0.2, end: 0),
+                    ),
 
-                    const SizedBox(height: 16),
+                    const SizedBox(height: AppSpacing.md),
 
                     // Email field
                     TextFormField(
                       controller: _emailController,
                       keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Email',
-                        prefixIcon: const Icon(Icons.email_outlined),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        filled: true,
-                        fillColor: Colors.white.withOpacity(0.9),
+                        prefixIcon: Icon(Icons.email_outlined),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -159,9 +145,9 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                         }
                         return null;
                       },
-                    ).animate().fadeIn(delay: 600.ms).slideX(begin: -0.2, end: 0),
+                    ),
 
-                    const SizedBox(height: 16),
+                    const SizedBox(height: AppSpacing.md),
 
                     // Password field
                     TextFormField(
@@ -182,11 +168,6 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                             });
                           },
                         ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        filled: true,
-                        fillColor: Colors.white.withOpacity(0.9),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -197,9 +178,9 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                         }
                         return null;
                       },
-                    ).animate().fadeIn(delay: 700.ms).slideX(begin: -0.2, end: 0),
+                    ),
 
-                    const SizedBox(height: 16),
+                    const SizedBox(height: AppSpacing.md),
 
                     // Confirm password field
                     TextFormField(
@@ -220,11 +201,6 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                             });
                           },
                         ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        filled: true,
-                        fillColor: Colors.white.withOpacity(0.9),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -235,18 +211,15 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                         }
                         return null;
                       },
-                    ).animate().fadeIn(delay: 800.ms).slideX(begin: -0.2, end: 0),
+                    ),
 
-                    const SizedBox(height: 24),
+                    const SizedBox(height: AppSpacing.lg),
 
                     // Sign up button
                     ElevatedButton(
                       onPressed: authState.isLoading ? null : _signUp,
                       style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 16),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
+                        padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
                       ),
                       child: authState.isLoading
                           ? const SizedBox(
@@ -261,7 +234,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                               'Sign Up',
                               style: TextStyle(fontSize: 16),
                             ),
-                    ).animate().fadeIn(delay: 900.ms).slideY(begin: 0.2, end: 0),
+                    ),
                   ],
                 ),
               ),

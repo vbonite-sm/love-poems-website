@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import '../../config/app_colors.dart';
 import '../../config/app_theme.dart';
 import '../providers/auth_provider.dart';
-import '../widgets/gradient_background.dart';
+import '../widgets/solid_background.dart';
 import 'sign_up_screen.dart';
 import 'home_screen.dart';
 
@@ -47,7 +46,7 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(authState.error!),
-            backgroundColor: Colors.red,
+            backgroundColor: AppColors.errorRed,
           ),
         );
       }
@@ -59,11 +58,11 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
     final authState = ref.watch(authProvider);
 
     return Scaffold(
-      body: GradientBackground(
+      body: SolidBackground(
         child: SafeArea(
           child: Center(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.all(24.0),
+              padding: const EdgeInsets.all(AppSpacing.lg),
               child: Form(
                 key: _formKey,
                 child: Column(
@@ -72,23 +71,20 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                   children: [
                     // Heart icon
                     Icon(
-                      Icons.favorite,
+                      Icons.favorite_outline,
                       size: 64,
-                      color: AppColors.roseRouge,
-                    )
-                        .animate()
-                        .fadeIn(duration: 600.ms)
-                        .scale(delay: 200.ms, duration: 400.ms),
-                    const SizedBox(height: 16),
+                      color: AppColors.accentRose,
+                    ),
+                    const SizedBox(height: AppSpacing.md),
 
                     // Title
                     Text(
                       'Love Poems',
                       textAlign: TextAlign.center,
                       style: AppTheme.lightTheme.textTheme.displayMedium,
-                    ).animate().fadeIn(delay: 300.ms, duration: 600.ms),
+                    ),
 
-                    const SizedBox(height: 8),
+                    const SizedBox(height: AppSpacing.sm),
 
                     Text(
                       'Sign in to read your daily letter',
@@ -97,22 +93,17 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                         color: AppColors.textSecondary,
                         fontStyle: FontStyle.italic,
                       ),
-                    ).animate().fadeIn(delay: 400.ms, duration: 600.ms),
+                    ),
 
-                    const SizedBox(height: 48),
+                    const SizedBox(height: AppSpacing.xxl),
 
                     // Email field
                     TextFormField(
                       controller: _emailController,
                       keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Email',
-                        prefixIcon: const Icon(Icons.email_outlined),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        filled: true,
-                        fillColor: Colors.white.withOpacity(0.9),
+                        prefixIcon: Icon(Icons.email_outlined),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -123,9 +114,9 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                         }
                         return null;
                       },
-                    ).animate().fadeIn(delay: 500.ms).slideX(begin: -0.2, end: 0),
+                    ),
 
-                    const SizedBox(height: 16),
+                    const SizedBox(height: AppSpacing.md),
 
                     // Password field
                     TextFormField(
@@ -146,11 +137,6 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                             });
                           },
                         ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        filled: true,
-                        fillColor: Colors.white.withOpacity(0.9),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -161,18 +147,15 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                         }
                         return null;
                       },
-                    ).animate().fadeIn(delay: 600.ms).slideX(begin: -0.2, end: 0),
+                    ),
 
-                    const SizedBox(height: 24),
+                    const SizedBox(height: AppSpacing.lg),
 
                     // Sign in button
                     ElevatedButton(
                       onPressed: authState.isLoading ? null : _signIn,
                       style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 16),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
+                        padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
                       ),
                       child: authState.isLoading
                           ? const SizedBox(
@@ -187,9 +170,9 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                               'Sign In',
                               style: TextStyle(fontSize: 16),
                             ),
-                    ).animate().fadeIn(delay: 700.ms).slideY(begin: 0.2, end: 0),
+                    ),
 
-                    const SizedBox(height: 16),
+                    const SizedBox(height: AppSpacing.md),
 
                     // Sign up link
                     TextButton(
@@ -203,19 +186,19 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                       child: Text.rich(
                         TextSpan(
                           text: "Don't have an account? ",
-                          style: TextStyle(color: AppColors.textSecondary),
-                          children: [
+                          style: const TextStyle(color: AppColors.textSecondary),
+                          children: const [
                             TextSpan(
                               text: 'Sign Up',
                               style: TextStyle(
-                                color: AppColors.roseRouge,
-                                fontWeight: FontWeight.bold,
+                                color: AppColors.accentRose,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           ],
                         ),
                       ),
-                    ).animate().fadeIn(delay: 800.ms),
+                    ),
                   ],
                 ),
               ),

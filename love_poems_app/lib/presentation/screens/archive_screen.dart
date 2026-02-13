@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import '../../config/app_colors.dart';
 import '../../config/app_theme.dart';
 import '../../data/models/poem.dart';
@@ -15,27 +14,30 @@ class ArchiveScreen extends ConsumerWidget {
     final archiveAsync = ref.watch(archiveProvider);
 
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(AppSpacing.md),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'My Letters',
             style: AppTheme.lightTheme.textTheme.displaySmall,
-          ).animate().fadeIn(duration: 400.ms),
-          const SizedBox(height: 8),
+          ),
+          const SizedBox(height: AppSpacing.sm),
           Text(
             'All the love you\'ve collected',
             style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
               color: AppColors.textSecondary,
               fontStyle: FontStyle.italic,
             ),
-          ).animate().fadeIn(delay: 100.ms, duration: 400.ms),
-          const SizedBox(height: 24),
+          ),
+          const SizedBox(height: AppSpacing.lg),
           Expanded(
             child: archiveAsync.when(
               loading: () => const Center(
-                child: CircularProgressIndicator(color: AppColors.roseRouge),
+                child: CircularProgressIndicator(
+                  color: AppColors.accentRose,
+                  strokeWidth: 2,
+                ),
               ),
               error: (error, stack) => Center(
                 child: Column(
@@ -44,9 +46,9 @@ class ArchiveScreen extends ConsumerWidget {
                     Icon(
                       Icons.error_outline,
                       size: 48,
-                      color: AppColors.deepPassion.withValues(alpha: 0.5),
+                      color: AppColors.neutral400,
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: AppSpacing.md),
                     Text(
                       'Could not load archive',
                       style: AppTheme.lightTheme.textTheme.bodyLarge,
@@ -63,16 +65,16 @@ class ArchiveScreen extends ConsumerWidget {
                         Icon(
                           Icons.mail_outline,
                           size: 64,
-                          color: AppColors.deepPassion.withValues(alpha: 0.3),
+                          color: AppColors.neutral400,
                         ),
-                        const SizedBox(height: 16),
+                        const SizedBox(height: AppSpacing.md),
                         Text(
                           'No letters yet',
                           style: AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
-                            color: AppColors.deepPassion.withValues(alpha: 0.7),
+                            color: AppColors.neutral600,
                           ),
                         ),
-                        const SizedBox(height: 8),
+                        const SizedBox(height: AppSpacing.sm),
                         Text(
                           'Open your first envelope to start collecting',
                           style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
@@ -82,15 +84,15 @@ class ArchiveScreen extends ConsumerWidget {
                         ),
                       ],
                     ),
-                  ).animate().fadeIn(duration: 600.ms);
+                  );
                 }
 
                 return GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     childAspectRatio: 0.85,
-                    crossAxisSpacing: 12,
-                    mainAxisSpacing: 12,
+                    crossAxisSpacing: AppSpacing.md,
+                    mainAxisSpacing: AppSpacing.md,
                   ),
                   itemCount: poems.length,
                   itemBuilder: (context, index) {
@@ -127,18 +129,12 @@ class _ArchiveCard extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.roseRouge.withValues(alpha: 0.1),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
-            ),
-          ],
+          color: AppColors.pureWhite,
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: AppElevation.subtle,
         ),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(12),
           child: Stack(
             children: [
               // Background envelope icon
@@ -148,32 +144,32 @@ class _ArchiveCard extends StatelessWidget {
                 child: Icon(
                   Icons.mail,
                   size: 100,
-                  color: AppColors.softBlush.withValues(alpha: 0.5),
+                  color: AppColors.neutral200,
                 ),
               ),
               // Content
               Padding(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(AppSpacing.md),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 8,
-                        vertical: 4,
+                        horizontal: AppSpacing.sm,
+                        vertical: AppSpacing.xs,
                       ),
                       decoration: BoxDecoration(
-                        color: AppColors.softBlush,
+                        color: AppColors.neutral100,
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(
                         '#${poem.id}',
                         style: AppTheme.lightTheme.textTheme.labelSmall?.copyWith(
-                          color: AppColors.deepPassion,
+                          color: AppColors.neutral600,
                         ),
                       ),
                     ),
-                    const SizedBox(height: 12),
+                    const SizedBox(height: AppSpacing.md),
                     Text(
                       poem.title,
                       style: AppTheme.poemTitle.copyWith(fontSize: 16),
@@ -186,9 +182,9 @@ class _ArchiveCard extends StatelessWidget {
                         Icon(
                           Icons.favorite,
                           size: 14,
-                          color: AppColors.roseRouge.withValues(alpha: 0.6),
+                          color: AppColors.accentRose,
                         ),
-                        const SizedBox(width: 4),
+                        const SizedBox(width: AppSpacing.xs),
                         Text(
                           'Read',
                           style: AppTheme.lightTheme.textTheme.labelSmall?.copyWith(
@@ -204,10 +200,6 @@ class _ArchiveCard extends StatelessWidget {
           ),
         ),
       ),
-    ).animate(delay: (index * 100).ms).fadeIn(duration: 400.ms).slideY(
-          begin: 0.2,
-          end: 0,
-          curve: Curves.easeOutCubic,
-        );
+    );
   }
 }
